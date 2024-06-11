@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>Profile Page</title>
+{% endblock %}
+
+{% block body %}
+<section>
+    <div class="container">
+        <h1 class="text-center">Profile</h1>
+        <a href="{% url 'pass_change' %}">Change password with old password</a>
+        <br>
+        <a href="{% url 'pass_change2' %}">Change password without old password</a>
+    </div>
+</section>
+{% endblock %}

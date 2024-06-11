@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>Signin Page</title>
+{% endblock %}
+
+{% block body %}
+<section>
+    <div class="container">
+        <h1 class="text-center">Sign Up</h1>
+        <form method="POST" style="width: 50%; margin: auto" novalidate>
+            {% csrf_token %}
+            <!-- {{ form | crispy }} -->
+            {% for frm in form %}
+            {{frm.label}}
+            {{frm}}
+            {{frm.errors}}
+            {% endfor %}
+            <input type="submit" value="Submit" class="btn btn-primary mt-3">
+        </form>
+    </div>
+</section>
+{% endblock %}
